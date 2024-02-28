@@ -14,7 +14,7 @@ namespace Pokedex.Models;
 
       public double Altura { get; set; }
 
-      public string Peso { get; set; }
+      public double Peso { get; set; }
 
       public string Imagem { get; set; }
 
