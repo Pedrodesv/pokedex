@@ -4,3 +4,5 @@ git config --global user.email pedro-nfl@hotmail.com
 
 criar um projeto MVC
 dotnet new mvc -o Pokedex
+
+06/03 -> parei no slide 145
