@@ -52,13 +52,36 @@ public IActionResult Details(int id)
         Anterior = pokemons.OrderByDescending(p => p.Numero).FirstOrDefault(p => p.Numero < id),
         Proximo = pokemons.OrderBy(p => p.Numero).FirstOrDefault(p => p.Numero > id),
     };
-
-    ViewData["Tipos"] = tipos;
-    var pokemon = pokemons
-    .Where(p => p.Numero == id)
-    .FirstOrDefault();
-    return View(pokemon);
+    return View(details);
 }
+
+    private List<Pokemon> GetPokemons()
+    {
+        using (StreamReader leitor = new StreamReader("Data\\pokemon.json"))
+        {
+            string dados = leitor.ReadToEnd();
+            return JsonSerializer.Deserialize<List<Pokemon>>(dados);
+        }
+    }
+
+    private List<Tipo> GetTipos()
+    {
+        using (StreamReader leitor = new("Data\\tipos.json"))
+        {
+            using dados = leitor.ReadToEnd();
+            return JsonSerializer.Deserialize<List<Tipo>>(dados);
+        }
+    }
+
+
+
+
+
+
+
+
+
+
 
     public IActionResult Privacy()
     {
