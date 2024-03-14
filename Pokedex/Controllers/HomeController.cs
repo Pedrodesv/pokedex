@@ -37,7 +37,7 @@ public IActionResult Details(int id)
 
     private List<Pokemon> GetPokemons()
     {
-        using (StreamReader leitor = new StreamReader("Data\\pokemon.json"))
+        using (StreamReader leitor = new StreamReader("Data\\pokemons.json"))
         {
             string dados = leitor.ReadToEnd();
             return JsonSerializer.Deserialize<List<Pokemon>>(dados);
@@ -48,20 +48,10 @@ public IActionResult Details(int id)
     {
         using (StreamReader leitor = new("Data\\tipos.json"))
         {
-            using dados = leitor.ReadToEnd();
+            string dados = leitor.ReadToEnd();
             return JsonSerializer.Deserialize<List<Tipo>>(dados);
         }
     }
-
-
-
-
-
-
-
-
-
-
 
     public IActionResult Privacy()
     {
