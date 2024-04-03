@@ -11,7 +11,7 @@
         };
     };
     for (i = 0; i < buttons.length; i++) {
-        if (buttons[i].id == `btn=${type}`) {
+        if (buttons[i].id == `btn-${type}`) {
             buttons[i].classList.remove("btn-sm");
             buttons[i].classList.add("btn-md");
         }
